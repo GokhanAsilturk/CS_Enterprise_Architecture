@@ -1,11 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -15,12 +10,12 @@ namespace DataAccess.Concrete.InMemory
         List<Product> _products;
         public InMemoryProductDal()
         {
-            _products = new List<Product> { 
+            _products = new List<Product> {
                 new Product { ProductId = 1, CategoryId = 1, ProductName = "Bardak", UnitPrice = 20, UnitsInStock = 10 },
                 new Product { ProductId = 2, CategoryId = 2, ProductName = "Kamera", UnitPrice = 100, UnitsInStock = 55 },
                 new Product { ProductId = 3, CategoryId = 1, ProductName = "Küçük Bardak", UnitPrice = 10, UnitsInStock = 30 }
             };
-            
+
         }
         public void Add(Product product)
         {
@@ -51,7 +46,7 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Product> GetAllByCategory(int categoryId)
         {
-            return _products.Where(p=>p.CategoryId == categoryId).ToList();
+            return _products.Where(p => p.CategoryId == categoryId).ToList();
         }
 
         public void Update(Product product)
