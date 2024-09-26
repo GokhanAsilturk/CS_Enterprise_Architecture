@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTOs;
 
 namespace Business.Abstract
@@ -12,5 +13,9 @@ namespace Business.Abstract
         List<Product> GetByUnitPrice(int min, int max);
 
         List<ProductDetailDto> GetProductDetails();
+
+        IResult Add(Product product);
+
+        Product GetById(int id);
     }
 }
