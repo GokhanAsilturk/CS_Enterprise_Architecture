@@ -6,16 +6,16 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        List<Product> GetAll();
+        IDataResult<List<Product>> GetAll();
 
-        List<Product> GetByCategoryId(int id);
+        IDataResult<List<Product>> GetByCategoryId(int id);
 
-        List<Product> GetByUnitPrice(int min, int max);
+        IDataResult<List<Product>> GetByUnitPrice(int min, int max);
 
-        List<ProductDetailDto> GetProductDetails();
+        IDataResult<List<ProductDetailDto>> GetProductDetails();
 
         IResult Add(Product product);
 
-        Product GetById(int id);
+        IDataResult<Product> GetById(int id);
     }
 }
