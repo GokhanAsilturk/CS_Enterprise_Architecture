@@ -1,21 +1,22 @@
-﻿using Core.Utilities.Results;
+﻿
+using Core.Utilities.Results;
 using Entities.Concrete;
 using Entities.DTOs;
 
 namespace Business.Abstract
 {
-    public interface IProductService
-    {
-        IDataResult<List<Product>> GetAll();
+public interface IProductService
+{
+    IDataResult<List<Product>> GetAll();
 
-        IDataResult<List<Product>> GetByCategoryId(int id);
+    IDataResult<List<Product>> GetByCategoryId(int id);
 
-        IDataResult<List<Product>> GetByUnitPrice(int min, int max);
+    IDataResult<List<Product>> GetByUnitPrice(int min, int max);
 
-        IDataResult<List<ProductDetailDto>> GetProductDetails();
+    IDataResult<List<ProductDetailDto>> GetProductDetails();
 
-        IResult Add(Product product);
+    IResult Add(Product product);
 
-        IDataResult<Product> GetById(int id);
-    }
+    IDataResult<Product> GetById(int id);
+}
 }
