@@ -28,17 +28,17 @@ namespace Business.Concrete
             //{
             //    return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             //}
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductsListed);
         }
 
         public IDataResult<List<Product>> GetByCategoryId(int id)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id),"mesıj");
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id), "mesıj");
         }
 
         public IDataResult<Product> GetById(int id)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id) );
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id));
         }
 
         public IDataResult<List<Product>> GetByUnitPrice(int min, int max)

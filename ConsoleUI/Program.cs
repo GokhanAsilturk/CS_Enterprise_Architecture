@@ -31,10 +31,11 @@ internal class Program
                 Console.WriteLine(product.ProductName + " / " + product.CategoryName);
             }
         }
-        else {
+        else
+        {
             Console.WriteLine(result.Message);
         }
-        
-       
+
+
     }
 }

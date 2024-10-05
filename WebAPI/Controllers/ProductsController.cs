@@ -1,16 +1,12 @@
 ﻿using Business.Abstract;
-using Business.Concrete;
-using Core.Utilities.Results;
-using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+
     public class ProductsController : ControllerBase
     {
         IProductService productService;
@@ -20,13 +16,19 @@ namespace WebAPI.Controllers
             this.productService = productService;
         }
 
-        [HttpGet]
-        public List<Product> GetAll()
+        [HttpGet("getAll")]
+        public IActionResult Get()
         {
-            
-            return productService.GetAll().Data;
+            var result = productService.GetAll();
+            return Ok(result);
         }
 
-       
+        [HttpPost("add")]
+        public IActionResult Post(Product product) {
+            var result = productService.Add(product);
+        return Ok(result);
+        }
+
+
     }
 }
