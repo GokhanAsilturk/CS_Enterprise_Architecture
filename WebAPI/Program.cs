@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 //UYGULAMA ÝÇÝN EKLENDÝ !!
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
-    .ConfigureContainer<ContainerBuilder>(tempBuilder =>
+    .ConfigureContainer<ContainerBuilder>(option =>
     {
-        tempBuilder.RegisterModule(new AutofacBusinessModule());
+        option.RegisterModule(new AutofacBusinessModule());
     });
 
 
